@@ -1,0 +1,23 @@
+{
+  "name": "story_interpreter_choice_exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testRunner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afeather123/story_interpreter_choice_exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afeather123/story_interpreter_choice_exercise/issues"
+  },
+  "homepage": "https://github.com/afeather123/story_interpreter_choice_exercise#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}

@@ -1,1 +1,1 @@
-# story_interpreter_choice_exercise
+This is a starter repository for the choice section of my interactive dialogue tutorial.

@@ -1,0 +1,120 @@
+{
+    "variables": {
+        "affinity": 0
+    },
+
+    "start": "first",
+
+    "nodes": {
+        "first": {
+            "data": {
+                "text": "Hello person. My attitude towards you is completely neutral."
+            },
+
+            "choices": [
+                {
+                    "text": "I'm doing something mean",
+                    "set_conditions": [
+                        {
+                            "variable": "affinity",
+                            "operator": "-=",
+                            "value": 1
+                        }
+                    ],
+                    "redirects": [
+                        {
+                            "node_name": "second"
+                        }
+                    ]
+                },
+                {
+                    "text": "Let's do something nice",
+                    "set_conditions": [
+                        {
+                            "variable": "affinity",
+                            "operator": "+=",
+                            "value": 1
+                        }
+                    ],
+                    "redirects": [
+                        {
+                            "node_name": "second"
+                        }
+                    ]
+                }
+            ]
+        },
+        "second": {
+            "data": {
+                "text": "Now do something mean or nice again..."
+            },
+            "choices": [
+                {
+                    "text": "You suck!",
+                    "set_conditions": [
+                        {
+                            "variable": "affinity",
+                            "operator": "-=",
+                            "value": 1
+                        }
+                    ],
+                    "redirects": [
+                        {
+                            "node_name": "badEnding",
+                            "conditions": [
+                                {
+                                    "variable": "affinity",
+                                    "operator": "=",
+                                    "value": -2
+                                }
+                            ]
+                        },
+                        {
+                            "node_name": "neutralEnding"
+                        }
+                    ]
+                },
+                {
+                    "text": "Hey you're pretty cool",
+                    "set_conditions": [
+                        {
+                            "variable": "affinity",
+                            "operator": "+=",
+                            "value": 1
+                        }
+                    ],
+                    "redirects": [
+                        {
+                            "node_name": "goodEnding",
+                            "conditions":[
+                                {
+                                    "variable": "affinity",
+                                    "operator": "=",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "node_name": "neutralEnding"
+                        }
+                    ]
+                }
+            ]
+        },
+        "badEnding": {
+            "data": {
+                "text": "Oh hey look I killed you now you're dead"
+            }
+        },
+        "neutralEnding": {
+            "data": {
+                "text": "Well have a nice day"
+            }
+        },
+        "goodEnding": {
+            "data": {
+                "text": "Hey want to hang out some time"
+            }
+        }
+    }
+}
